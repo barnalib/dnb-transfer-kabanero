@@ -1,0 +1,55 @@
+spring:
+  datasource:
+   url: jdbc:mysql://172.30.42.200:3306/dnb
+   username: root1
+   password: root2
+   testWhileIdle: true
+   validationQuery: SELECT 1
+  jpa:
+    hibernate:
+      use-new-id-generator-mappings: false
+      ddl-auto: update
+    show-sql: true 
+    properties:
+      hibernate:
+       format_sql: true
+       dialect: org.hibernate.dialect.MySQL5Dialect
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+         configuration:
+          sasl:
+           mechanism: PLAIN
+          security:
+           protocol: SASL_SSL
+         jaas:
+           loginModule: org.apache.kafka.common.security.plain.PlainLoginModule
+           options:
+            username: token
+            password: pEg_K76Sjpi-6Nl3Ian6ZvcHzhTUL6tLnJoBia_J9M3A
+            
+         brokers:
+          - broker-2-dj0765wjps08nx41.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-1-dj0765wjps08nx41.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093
+      bindings:
+        output:
+          binder: kafka
+          destination: loan
+          group: output-group-3
+          content-type: application/json
+        input:
+         binder: kafka
+         destination: loan
+         content-type: application/json
+         group: input-group-3
+transaction:
+  api:
+    uri: http://dnb-transaction-cpfa-dnb.ocp-app-mod-055be62028fec1a956793dedf3faa04a-0001.us-east.containers.appdomain.cloud/api/v1/transaction
+account: 
+  api:
+    uri: http://dnb.eu-gb.mybluemix.net/api/v1/accounts/{acctNumber}   
+management.endpoints.web.exposure.include: health,metrics,prometheus,liveness 
+spring.devtools.restart: 
+  additional-paths: ./target 
+  trigger-file: .appsody-spring-trigger  
