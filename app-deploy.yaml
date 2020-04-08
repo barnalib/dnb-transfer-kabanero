@@ -2,13 +2,21 @@ apiVersion: appsody.dev/v1beta1
 kind: AppsodyApplication
 metadata:
   annotations:
+    commit.image.appsody.dev/author: Bhattacharyya, B <b.bhattacharyya@accenture.com>
+    commit.image.appsody.dev/committer: Bhattacharyya, B <b.bhattacharyya@accenture.com>
+    commit.image.appsody.dev/date: Mon Apr 6 23:56:29 2020 +0530
+    commit.image.appsody.dev/message: test
     commit.stack.appsody.dev/author: Richard Trotter <45805781+richard-trotter@users.noreply.github.com>
     commit.stack.appsody.dev/committer: GitHub <noreply@github.com>
     commit.stack.appsody.dev/contextDir: /incubator/java-spring-boot2
     commit.stack.appsody.dev/date: Wed Apr 1 11:16:02 2020 +0100
     commit.stack.appsody.dev/message: retract spring boot stack image packages update
       (#707)
-    image.opencontainers.org/created: "2020-04-06T21:20:01+05:30"
+    image.opencontainers.org/created: "2020-04-08T11:32:04+05:30"
+    image.opencontainers.org/documentation: https://github.com/barnalib/dnb-transfer-kabanero
+    image.opencontainers.org/revision: 3d227271a999c95e3ab877f8e6c7ee1b2896f174-modified
+    image.opencontainers.org/source: https://github.com/barnalib/dnb-transfer-kabanero/tree/master
+    image.opencontainers.org/url: https://github.com/barnalib/dnb-transfer-kabanero
     stack.appsody.dev/authors: Erin Schnabel <schnabel@us.ibm.com>, Ozzy Osborne <ozzy@ca.ibm.com>,
       Richard Trotter <rtrotter@us.ibm.com>, Harish Yayi <hyayi@us.ibm.com>
     stack.appsody.dev/configured: docker.io/appsody/java-spring-boot2:0.3
@@ -45,7 +53,7 @@ spec:
     labels:
       k8s-app: dnb-transfer
   readinessProbe:
-    failureThreshold: 12
+    failureThreshold: 11
     httpGet:
       path: /actuator/health
       port: 8080

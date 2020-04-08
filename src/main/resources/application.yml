@@ -31,18 +31,18 @@ spring:
             password: pEg_K76Sjpi-6Nl3Ian6ZvcHzhTUL6tLnJoBia_J9M3A
             
          brokers:
-          - broker-2-dj0765wjps08nx41.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-1-dj0765wjps08nx41.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093
+          - broker-2-dj0765wjps08nx41.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-1-dj0765wjps08nx41.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-0-dj0765wjps08nx41.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-4-dj0765wjps08nx41.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-3-dj0765wjps08nx41.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093,broker-5-dj0765wjps08nx41.kafka.svc03.us-south.eventstreams.cloud.ibm.com:9093  
       bindings:
         output:
           binder: kafka
           destination: loan
-          group: output-group-3
+          group: output-group-1
           content-type: application/json
         input:
          binder: kafka
          destination: loan
          content-type: application/json
-         group: input-group-3
+         group: input-group-1
 transaction:
   api:
     uri: http://dnb-transaction-cpfa-dnb.ocp-app-mod-055be62028fec1a956793dedf3faa04a-0001.us-east.containers.appdomain.cloud/api/v1/transaction
