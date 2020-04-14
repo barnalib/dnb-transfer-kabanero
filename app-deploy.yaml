@@ -41,7 +41,7 @@ spec:
   createKnativeService: false
   expose: true
   livenessProbe:
-    failureThreshold: 11
+    failureThreshold: 12
     httpGet:
       path: /api/v1/fund_transfer/liveness
       port: 8080
