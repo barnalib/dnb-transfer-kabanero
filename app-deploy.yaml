@@ -53,7 +53,7 @@ spec:
     labels:
       k8s-app: dnb-transfer
   readinessProbe:
-    failureThreshold: 10
+    failureThreshold: 11
     httpGet:
       path: /actuator/health
       port: 8080
