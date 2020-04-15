@@ -35,7 +35,7 @@ metadata:
     stack.appsody.dev/id: java-spring-boot2
     stack.appsody.dev/version: 0.3.28
   name: dnb-transfer
-  namespace: cpfa-dnb
+  
 spec:
   applicationImage: docker-registry.default.svc:5000/cpfa-dnb/dnb-transfer:latest
   createKnativeService: false
